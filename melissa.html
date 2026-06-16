@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temperature Dashboard</title>
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    .temp {
+      font-size: 80px;
+      color: #38bdf8;
+    }
+
+    .status {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Live Temperature</h1>
+  <div class="temp" id="temp">-- °C</div>
+  <div class="status" id="status">Connecting...</div>
+
+  <script>
+    // IMPORTANT: use ws:// NOT mqtt://
+    const client = mqtt.connect("ws://157.173.101.159:9001");
+
+    const tempBox = document.getElementById("temp");
+    const statusBox = document.getElementById("status");
+
+    client.on("connect", function () {
+      statusBox.innerText = "Connected to MQTT Broker";
+      client.subscribe("home/temperature");
+    });
+
+    client.on("message", function (topic, message) {
+      const value = message.toString();
+      tempBox.innerText = value + " °C";
+    });
+
+    client.on("error", function (err) {
+      statusBox.innerText = "Connection error";
+      console.log(err);
+    });
+  </script>
+
+</body>
+</html>
