@@ -23,7 +23,7 @@ This project is a complete embedded IoT system that reads temperature using an A
 
 ## 🧠 System Architecture
 
-![System Architecture](./system_architecture.png)
+![System Architecture](./systemarchitecture.png)
 
 ---
 
