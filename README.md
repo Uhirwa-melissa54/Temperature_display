@@ -77,39 +77,47 @@ home/temperature
 Install dependencies:
 ```bash
 pip install pyserial paho-mqtt
+```
 Run:
+```bash
 python temperature_pc.py
-3. MQTT Broker (VPS)
-Broker IP:157.173.101.159
+```
+### 3. MQTT Broker (VPS)
+Broker IP:
+157.173.101.159
+
 Port:
 1883 (MQTT)
 9001 (WebSocket)
+
 Topic:
 home/temperature
 4. Web Dashboard
 
-Live dashboard URL:http://157.173.101.159:8078/melissa.html
+## Live dashboard URL:http://157.173.101.159:8078/melissa.html
 Features:
 
 Real-time temperature updates
 MQTT WebSocket connection
 Minimal UI dashboard
-📸 Screenshots
+## 📸 Screenshots
+### Working Dashboard(A screenshoot of instance where dashboard was working)
+![Screenshot](./ScreenshotofDashboard.png)
 
-Working Dashboard(A screenshoot of instance where dashboard was working)
-(./screenshootofDashboard.png)
+### Python output( A screen shot of the output of python program)
+![Screenshot](./Python.png)
 
-Python output( A screen shot of the output of python program)
-(./Screenshoot of Python sending data.png)
+## 🚀 How to Run the System
 
-🚀 How to Run the System
 Step 1: Arduino
 Open Arduino IDE
 Install libraries:
+
 DHT sensor library
 Adafruit Unified Sensor
 LiquidCrystal I2C
 Upload ArduinoCode.ino
+
 Step 2: PC Program
 pip install pyserial paho-mqtt
 python temperature_pc.py
@@ -126,10 +134,11 @@ Port 1883 open
 WebSocket enabled on 9001
 Step 4: Web Dashboard
 
-Open in browser:
+## Open in browser:
 
 http://157.173.101.159:8078/melissa.html
-🧪 Features Implemented
+
+## 🧪 Features Implemented
 
 ✔ Real-time temperature sensing
 ✔ LCD display with scrolling text
@@ -139,10 +148,9 @@ http://157.173.101.159:8078/melissa.html
 ✔ Live web dashboard
 ✔ End-to-end IoT pipeline
 
-👩‍💻 Author
+## 👩‍💻 Author
 
 Melissa
 Rwanda Coding Academy
 Embedded Systems & Software Programming Student
 
-Serial + MQTT Output
